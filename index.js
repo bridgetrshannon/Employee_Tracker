@@ -27,24 +27,45 @@ function init() {
   console.log(logoText);
 
   // Function to load prompts aka the questions
-  loadPrompts(
-    inquirer.prompt({
-      type: "list",
-      name: "choice",
-      message: "What would you like to do?",
-      choice: [
-        {
-          name: "View All Employees",
-          value: "VIEW_EMPLOYEES",
-        },
-      ],
-    })
-  );
+  function start() {
+    inquirer
+      .prompt({
+        type: "list",
+        name: "choice",
+        message: "What would you like to do?",
+        choice: [
+          {
+            name: "View All Employees",
+            value: "VIEW_EMPLOYEES",
+            name: "View All Employees By Department",
+            value: "VIEW_EMPLOYEES_BY_DEPARTMENT",
+            name: "View All Employees By Manager",
+            value: "VIEW_EMPLOYEES_BY_MANAGER",
+          },
+        ],
+      })
+      .then(function (answer) {
+        // based on their answer, either call the bid or the post functions
+        if (answer.choice === "View All Employees") {
+          viewEmployees();
+        } else if (answer.choice === "View All Employees By Department") {
+          viewEmployeesDepartment();
+        } else {
+          viewEmployeesManager();
+        }
+      });
+  }
 
   // Switch statement
   switch (choice) {
     case "VIEW_EMPLOYEES":
       return viewEmployees();
+    case "VIEW_EMPLOYEES_BY_DEPARTMENT":
+      return viewEmployeesDepartment();
+    case "VIEW_EMPLOYEES_BY_MANAGER":
+      return viewEmployeesManager();
   }
 }
 DB.viewEmployees();
+DB.viewEmployeesDepartment();
+DB.viewEmployeesManager();
