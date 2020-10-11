@@ -1,3 +1,5 @@
+---------- DON'T TOUCH THIS FILE -------------
+
 use employees;
 
 INSERT INTO department

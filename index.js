@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const mysql = require("mysql");
 const logo = require("asciiart-logo");
 const { start } = require("repl");
+// require dbFunctions.js file
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -46,3 +47,4 @@ function init() {
       return viewEmployees();
   }
 }
+DB.viewEmployees();
