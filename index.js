@@ -2,8 +2,8 @@
 const inquirer = require("inquirer");
 const mysql = require("mysql");
 // requires logo package to display in terminal
-// const logo = require("asciiart-logo");
-// const { start } = require("repl");
+const logo = require("asciiart-logo");
+const { start } = require("repl");
 const dbfunctions = require("./dbFunctions");
 
 var connection = mysql.createConnection({
@@ -20,7 +20,7 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
   if (err) throw err;
   // run start function after the connection is made to prompt the user
-  start();
+  begin();
 });
 // init function for employee manager logo
 // function init() {
@@ -28,7 +28,7 @@ connection.connect(function (err) {
 //   console.log(logoText);
 
 // Function to load prompts aka the questions
-function start() {
+function begin() {
   inquirer.prompt({
     type: "list",
     name: "choice",
@@ -79,6 +79,8 @@ function start() {
 }
 
 // Switch statement with user prompts and their functions
+//  =========== add the below line of code for switch statement ======
+// inquirer.prompt(questions).then((answer)=>{ switchFunction(answer) }
 switch (choice) {
   case "VIEW_EMPLOYEES":
     return viewEmployees();
