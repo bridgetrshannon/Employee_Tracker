@@ -1,17 +1,48 @@
 class DB {
-    viewAllEmployees()
-    viewEmployeesDepartment()
-    viewEmployeesManager()
-    addEmployee()
-    removeEmployee()
-    updateEmployeeRole()
-    updateEmployeeManager()
-    viewAllRoles()
-    addRole()
-    removeRole()
-    viewAllDepartments()
-    addDepartment()
-    removeDepartment()
-    quit()
+  viewAllEmployees() {
+    // query the database for all employees
+    connection.query("SELECT * FROM employee", function (err, results) {
+      if (err) throw err;
+    });
+    //   viewEmployeesDepartment() {
+    //     // view department
+    //   }
+    //   viewEmployeesManager() {
+    //     // view manager
+    //   }
+    //   addEmployee() {
+    //     // add employee
+    //   }
+    //   removeEmployee() {
+    //     // remove employee
+    //   }
+    //   updateEmployeeRole() {
+    //     // update role
+    //   }
+    //   updateEmployeeManager() {
+    //     // update manager
+    //   }
+    //   viewAllRoles() {
+    //     // view all roles
+    //   }
+    //   addRole() {
+    //     // add role
+    //   }
+    //   removeRole() {
+    //     // remove role
+    //   }
+    //   viewAllDepartments() {
+    //     // view departments
+    //   }
+    //   addDepartment() {
+    //     // add department
+    //   }
+    //   removeDepartment() {
+    //     // remove department
+    //   }
+    //   quit() {
+    //     // quit
+    //   }
+  }
 }
-module.exports = DB
+// module.exports = DB;

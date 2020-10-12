@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const mysql = require("mysql");
 // requires logo package to display in terminal
 // const logo = require("asciiart-logo");
-const { start } = require("repl");
+// const { start } = require("repl");
 const dbfunctions = require("./dbFunctions");
 
 var connection = mysql.createConnection({
@@ -33,7 +33,7 @@ function start() {
     type: "list",
     name: "choice",
     message: "What would you like to do?",
-    choices: [
+    choice: [
       {
         name: "View All Employees",
         value: "VIEW_EMPLOYEES",

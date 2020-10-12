@@ -1,6 +1,6 @@
 ---------- DON'T TOUCH THIS FILE -------------
 
-use employees;
+use employees_DB;
 
 INSERT INTO department
     (name)
