@@ -14,3 +14,4 @@ class DB {
     removeDepartment()
     quit()
 }
+module.exports = DB
