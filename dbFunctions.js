@@ -3,6 +3,7 @@ class DB {
     // query the database for all employees
     connection.query("SELECT * FROM employee", function (err, results) {
       if (err) throw err;
+      console.table(results);
     });
     //   viewEmployeesDepartment() {
     //     // view department
@@ -45,4 +46,4 @@ class DB {
     //   }
   }
 }
-// module.exports = DB;
+module.exports = DB;

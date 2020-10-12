@@ -4,18 +4,8 @@ const mysql = require("mysql");
 // requires logo package to display in terminal
 const logo = require("asciiart-logo");
 const { start } = require("repl");
-const dbfunctions = require("./dbFunctions");
-
-var connection = mysql.createConnection({
-  host: "localhost",
-
-  port: 3306,
-
-  user: "root",
-
-  password: "rootroot",
-  database: "employee_DB",
-});
+const DB = require("./dbFunctions");
+const connection = require("./db/connection")
 
 connection.connect(function (err) {
   if (err) throw err;
@@ -23,10 +13,10 @@ connection.connect(function (err) {
   begin();
 });
 // init function for employee manager logo
-// function init() {
-//   const logoText = logo({ name: "Employee Manager" }).render();
-//   console.log(logoText);
-
+function init() {
+  const logoText = logo({ name: "Employee Manager" }).render();
+  console.log(logoText);
+}
 // Function to load prompts aka the questions
 function begin() {
   inquirer.prompt({
@@ -65,22 +55,8 @@ function begin() {
         value: "QUIT",
       },
     ],
-  });
-  //   .then(function (answer) {
-  //     // based on their answer, either call the bid or the post functions
-  //     if (answer.choice === "View All Employees") {
-  //       viewEmployees();
-  //     } else if (answer.choice === "View All Employees By Department") {
-  //       viewEmployeesDepartment();
-  //     } else {
-  //       viewEmployeesManager();
-  //     }
-  //   });
-}
+  }).then((choice)=>{ 
 
-// Switch statement with user prompts and their functions
-//  =========== add the below line of code for switch statement ======
-// inquirer.prompt(questions).then((answer)=>{ switchFunction(answer) }
 switch (choice) {
   case "VIEW_EMPLOYEES":
     return viewEmployees();
@@ -112,17 +88,33 @@ switch (choice) {
     return quit();
 }
 
-DB.viewAllEmployees();
-DB.viewEmployeesDepartment();
-DB.viewEmployeesManager();
-DB.addEmployee();
-DB.removeEmployee();
-DB.updateEmployeeRole();
-DB.updateEmployeeManager();
-DB.viewAllRoles();
-DB.addRole();
-DB.removeRole();
-DB.viewAllDepartments();
-DB.addDepartment();
-DB.removeDepartment();
-DB.quit();
+//     .then(function (answer) {
+//       // based on their answer, either call the bid or the post functions
+//       if (answer.choice === "View All Employees") {
+//         viewEmployees();
+//       } else if (answer.choice === "View All Employees By Department") {
+//         viewEmployeesDepartment();
+//       } else {
+//         viewEmployeesManager();
+//       }
+//     });
+// }
+
+// Switch statement with user prompts and their functions
+//  =========== add the below line of code for switch statement ======
+
+
+// DB.viewAllEmployees();
+// DB.viewEmployeesDepartment();
+// DB.viewEmployeesManager();
+// DB.addEmployee();
+// DB.removeEmployee();
+// DB.updateEmployeeRole();
+// DB.updateEmployeeManager();
+// DB.viewAllRoles();
+// DB.addRole();
+// DB.removeRole();
+// DB.viewAllDepartments();
+// DB.addDepartment();
+// DB.removeDepartment();
+// DB.quit();
