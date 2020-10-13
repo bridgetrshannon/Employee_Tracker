@@ -9,23 +9,6 @@ class DB {
       console.table(results);
     });
   }
-  // viewEmployeesDepartment() {
-  //   connection.query(
-  //     "SELECT employee.id, department.id FROM employee LEFT JOIN department ON employee.id = departments.id;",
-  //     function (err, results) {
-  //       if (err) throw err;
-  //       console.table(results);
-  //     }
-  //   );
-  // }
-  // viewEmployeesManager() {
-  //   connection.query("SELECT * FROM
-  // employee",  ==== this is some sort of joint between manager and employee tables ===
-  // function (err, results) {
-  //     if (err) throw err;
-  //     // console.table(results);
-  //     console.log("is this working?");
-  //   });
 
   // addEmployee() {
   //   connection.query("SELECT * FROM employee", function (err, results) {
@@ -98,13 +81,6 @@ class DB {
   //     console.log("is this working?");
   //   });
 
-  //   updateEmployeeManager() {
-  //     connection.query("SELECT * FROM employee", function (err, results) {
-  //       if (err) throw err;
-  //       // console.table(results);
-  //       console.log("is this working?");
-  //     });
-
   viewAllRoles() {
     connection.query("SELECT * FROM role", function (err, results) {
       if (err) throw err;
@@ -155,7 +131,8 @@ class DB {
       .then(function (answer) {
         // getting a parse error
         connection.query(
-          "DELETE FROM employee SET ?",
+          // "DELETE FROM employee SET ?",
+          “UPDATE employee SET role_id ? WHERE id ?“,
           {
             title: answer.title,
             salary: answer.salary,
@@ -169,6 +146,20 @@ class DB {
         );
       });
   }
+  //         "DELETE FROM employee SET ?",
+  //         {
+  //           title: answer.title,
+  //           salary: answer.salary,
+  //           departmentID: answer.departmentID,
+  //         },
+  //         function (err, results) {
+  //           if (err) throw err;
+  //           console.table(results);
+  //           // console.log("is this working?");
+  //         }
+  //       );
+  //     });
+  // }
 
   //   connection.query("SELECT * FROM employee", function (err, results) {
   //     if (err) throw err;
@@ -190,13 +181,6 @@ class DB {
   //       // console.table(results);
   //       console.log("is this working?");
   //     });
-
-  // removeDepartment() {
-  //   connection.query("SELECT * FROM employee", function (err, results) {
-  //     if (err) throw err;
-  //     // console.table(results);
-  //     console.log("is this working?");
-  //   });
 
   //  quit() {
   //   connection.query("SELECT * FROM employee", function (err, results) {

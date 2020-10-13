@@ -92,28 +92,12 @@ function begin() {
             db.viewEmployees();
             break;
 
-          case "VIEW_EMPLOYEES_BY_DEPARTMENT":
-            db.viewEmployeesDepartment();
-            break;
-
-          // case "View All Employees By Manager":
-          //   viewEmployeesManager();
-          //   break;
-
           // case "Add Employee":
           //   addEmployee();
           //   break;
 
-          case "REMOVE_EMPLOYEE":
-            db.removeEmployee();
-            break;
-
           // case "Update Employee Role":
           //   updateEmployeeRole();
-          //   break;
-
-          // case "Update Employee Manager":
-          //   updateEmployeeManager();
           //   break;
 
           case "VIEW_ROLES":
@@ -124,10 +108,6 @@ function begin() {
           //   addRole();
           //   break;
 
-          case "REMOVE_ROLE":
-            db.removeRole();
-            break;
-
           case "VIEW_DEPARTMENTS":
             db.viewAllDepartments();
             break;
@@ -136,15 +116,25 @@ function begin() {
           //   addDepartment();
           //   break;
 
-          // case "Remove Department":
-          //   removeDepartment();
-          //   break;
-
           // case "Quit":
           //   connection.end();
           //   break;
         }
       }
+
+      // required
+      //       Add departments, roles, employees
+
+      // View departments, roles, employees
+
+      // Update employee roles
+
+      // bonus
+      //       Update employee managers
+
+      // View employees by manager
+
+      // Delete departments, roles, and employees
 
       // these are all the functions - they are to be called at specific times, not all at once
 
