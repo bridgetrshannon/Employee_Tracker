@@ -124,9 +124,9 @@ function begin() {
           //   addRole();
           //   break;
 
-          // case "Remove Role":
-          //   removeRole();
-          //   break;
+          case "REMOVE_ROLE":
+            db.removeRole();
+            break;
 
           case "VIEW_DEPARTMENTS":
             db.viewAllDepartments();
