@@ -55,8 +55,8 @@ class DB {
   viewAllRoles() {
     connection.query("SELECT * FROM employee", function (err, results) {
       if (err) throw err;
-      // console.table(results);
-      console.log("is this working?");
+      console.table(results);
+      // console.log("is this working?");
     });
   }
   // addRole() {

@@ -116,9 +116,9 @@ function begin() {
           //   updateEmployeeManager();
           //   break;
 
-          // case "View All Roles":
-          //   viewAllRoles();
-          //   break;
+          case "VIEW_ROLES":
+            db.viewAllRoles();
+            break;
 
           // case "Add Role":
           //   addRole();
