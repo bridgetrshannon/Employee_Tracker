@@ -14,21 +14,21 @@ class DB {
     inquirer
       .prompt([
         {
-          name: "firstname",
+          name: "first_name",
           type: "input",
           message:
             "What is the first name of the employee you would like to add?",
         },
         {
-          name: "lastname",
+          name: "last_name",
           type: "input",
           message:
             "What is the last name of the employee you would like to add?",
         },
         {
-          name: "roleID",
+          name: "role_id",
           type: "number",
-          message: "What is the roleID of the employee you would like to add?",
+          message: "What is the role id of the employee you would like to add?",
           validate: function (input) {
             if (typeof input == "NaN") {
               return "You need to provide a number";
@@ -37,10 +37,10 @@ class DB {
           },
         },
         {
-          name: "managerID",
+          name: "manager_id",
           type: "number",
           message:
-            "What is the managerID of the employee you would like to add?",
+            "What is the manager id of the employee you would like to add?",
           validate: function (input) {
             if (typeof input == "NaN") {
               return "You need to provide a number";
@@ -53,10 +53,10 @@ class DB {
         connection.query(
           "INSERT INTO employee SET ?",
           {
-            firstname: answer.firstname,
-            lastname: answer.lastname,
-            roleID: answer.roleID,
-            managerID: answer.managerID,
+            first_name: answer.first_name,
+            last_name: answer.last_name,
+            role_id: answer.role_id,
+            manager_id: answer.manager_id,
           },
           function (err, results) {
             if (err) throw err;

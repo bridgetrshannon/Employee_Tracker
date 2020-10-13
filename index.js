@@ -68,9 +68,9 @@ function begin() {
             db.viewEmployees();
             break;
 
-          // case "Add Employee":
-          //   addEmployee();
-          //   break;
+          case "ADD_EMPLOYEE":
+            db.addEmployee();
+            break;
 
           // case "Update Employee Role":
           //   updateEmployeeRole();
@@ -80,21 +80,21 @@ function begin() {
             db.viewAllRoles();
             break;
 
-          // case "Add Role":
-          //   addRole();
-          //   break;
+          case "ADD_ROLE":
+            db.addRole();
+            break;
 
           case "VIEW_DEPARTMENTS":
             db.viewAllDepartments();
             break;
 
-          // case "Add Department":
-          //   addDepartment();
-          //   break;
+          case "ADD_DEPARTMENT":
+            db.addDepartment();
+            break;
 
-          // case "Quit":
-          //   connection.end();
-          //   break;
+          case "QUIT":
+            begin();
+            break;
         }
       }
 
