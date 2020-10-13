@@ -72,9 +72,9 @@ function begin() {
             db.addEmployee();
             break;
 
-          // case "Update Employee Role":
-          //   updateEmployeeRole();
-          //   break;
+          case "UPDATE_EMPLOYEE_ROLE":
+            db.updateEmployeeRole();
+            break;
 
           case "VIEW_ROLES":
             db.viewAllRoles();
