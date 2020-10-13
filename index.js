@@ -32,28 +32,12 @@ function begin() {
           value: "VIEW_EMPLOYEES",
         },
         {
-          name: "View All Employees By Department",
-          value: "VIEW_EMPLOYEES_BY_DEPARTMENT",
-        },
-        {
-          name: "View All Employees By Manager",
-          value: "VIEW_EMPLOYEES_BY_MANAGER",
-        },
-        {
           name: "Add Employee",
           value: "ADD_EMPLOYEE",
         },
         {
-          name: "Remove Employee",
-          value: "REMOVE_EMPLOYEE",
-        },
-        {
           name: "Update Employee Role",
           value: "UPDATE_EMPLOYEE_ROLE",
-        },
-        {
-          name: "Update Employee Manager",
-          value: "UPDATE_EMPLOYEE_MANAGER",
         },
         {
           name: "View All Roles",
@@ -64,20 +48,12 @@ function begin() {
           value: "ADD_ROLE",
         },
         {
-          name: "Remove Role",
-          value: "REMOVE_ROLE",
-        },
-        {
           name: "View All Departments",
           value: "VIEW_DEPARTMENTS",
         },
         {
           name: "Add Department",
           value: "ADD_DEPARTMENT",
-        },
-        {
-          name: "Remove Department",
-          value: "REMOVE_DEPARTMENT",
         },
         {
           name: "Quit",
@@ -122,34 +98,8 @@ function begin() {
         }
       }
 
-      // required
-      //       Add departments, roles, employees
-
-      // View departments, roles, employees
-
+      // Required functions for
+      // Add departments, roles, employees
       // Update employee roles
-
-      // bonus
-      //       Update employee managers
-
-      // View employees by manager
-
-      // Delete departments, roles, and employees
-
-      // these are all the functions - they are to be called at specific times, not all at once
-
-      // DB.viewEmployeesDepartment();
-      // DB.viewEmployeesManager();
-      // DB.addEmployee();
-      // DB.removeEmployee();
-      // DB.updateEmployeeRole();
-      // DB.updateEmployeeManager();
-      // DB.viewAllRoles();
-      // DB.addRole();
-      // DB.removeRole();
-      // DB.viewAllDepartments();
-      // DB.addDepartment();
-      // DB.removeDepartment();
-      // DB.quit();
     );
 }

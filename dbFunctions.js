@@ -10,33 +10,25 @@ class DB {
     });
   }
 
-  // addEmployee() {
-  //   connection.query("SELECT * FROM employee", function (err, results) {
-  //     if (err) throw err;
-  //     // console.table(results);
-  //     console.log("is this working?");
-  //   });
-
-  removeEmployee() {
+  addEmployee() {
     inquirer
       .prompt([
         {
           name: "firstname",
           type: "input",
           message:
-            "What is the first name of the employee you would like to delete?",
+            "What is the first name of the employee you would like to add?",
         },
         {
           name: "lastname",
           type: "input",
           message:
-            "What is the last name of the employee you would like to delete?",
+            "What is the last name of the employee you would like to add?",
         },
         {
           name: "roleID",
           type: "number",
-          message:
-            "What is the roleID of the employee you would like to delete?",
+          message: "What is the roleID of the employee you would like to add?",
           validate: function (input) {
             if (typeof input == "NaN") {
               return "You need to provide a number";
@@ -48,7 +40,7 @@ class DB {
           name: "managerID",
           type: "number",
           message:
-            "What is the managerID of the employee you would like to delete?",
+            "What is the managerID of the employee you would like to add?",
           validate: function (input) {
             if (typeof input == "NaN") {
               return "You need to provide a number";
@@ -59,7 +51,7 @@ class DB {
       ])
       .then(function (answer) {
         connection.query(
-          "DELETE FROM employee SET ?",
+          "INSERT INTO employee SET ?",
           {
             firstname: answer.firstname,
             lastname: answer.lastname,
@@ -88,26 +80,19 @@ class DB {
       // console.log("is this working?");
     });
   }
-  // addRole() {
-  //   connection.query("SELECT * FROM employee", function (err, results) {
-  //     if (err) throw err;
-  //     // console.table(results);
-  //     console.log("is this working?");
-  //   });
 
-  // change values to correspond with the removeRole table
-  removeRole() {
+  addRole() {
     inquirer
       .prompt([
         {
           name: "title",
           type: "input",
-          message: "What is the title of the role you would like to delete?",
+          message: "What is the title of the role you would like to add?",
         },
         {
           name: "salary",
           type: "number",
-          message: "What is the salary of the role you would like to delete?",
+          message: "What is the salary of the role you would like to add?",
           validate: function (input) {
             if (typeof input == NaN) {
               return "You need to provide a number";
@@ -131,8 +116,7 @@ class DB {
       .then(function (answer) {
         // getting a parse error
         connection.query(
-          // "DELETE FROM employee SET ?",
-          “UPDATE employee SET role_id ? WHERE id ?“,
+          "INSERT INTO employee SET ?",
           {
             title: answer.title,
             salary: answer.salary,
@@ -146,26 +130,6 @@ class DB {
         );
       });
   }
-  //         "DELETE FROM employee SET ?",
-  //         {
-  //           title: answer.title,
-  //           salary: answer.salary,
-  //           departmentID: answer.departmentID,
-  //         },
-  //         function (err, results) {
-  //           if (err) throw err;
-  //           console.table(results);
-  //           // console.log("is this working?");
-  //         }
-  //       );
-  //     });
-  // }
-
-  //   connection.query("SELECT * FROM employee", function (err, results) {
-  //     if (err) throw err;
-  //     // console.table(results);
-  //     console.log("is this working?");
-  //   });
 
   viewAllDepartments() {
     connection.query("SELECT * FROM department", function (err, results) {
@@ -175,12 +139,30 @@ class DB {
     });
   }
 
-  //   addDepartment() {
-  //     connection.query("SELECT * FROM employee", function (err, results) {
-  //       if (err) throw err;
-  //       // console.table(results);
-  //       console.log("is this working?");
-  //     });
+  addDepartment() {
+    inquirer
+      .prompt([
+        {
+          name: "departmentName",
+          type: "input",
+          message: "What is the department you would like to add?",
+        },
+      ])
+      .then(function (answer) {
+        // getting a parse error
+        connection.query(
+          "INSERT INTO employee SET ?",
+          {
+            departmentName: answer.departmentName,
+          },
+          function (err, results) {
+            if (err) throw err;
+            console.table(results);
+            // console.log("is this working?");
+          }
+        );
+      });
+  }
 
   //  quit() {
   //   connection.query("SELECT * FROM employee", function (err, results) {
