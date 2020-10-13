@@ -5,6 +5,7 @@ const mysql = require("mysql");
 const logo = require("asciiart-logo");
 const { start } = require("repl");
 const DB = require("./dbFunctions");
+const db = new DB();
 const connection = require("./db/connection");
 
 connection.connect(function (err) {
@@ -87,66 +88,66 @@ function begin() {
     .then(
       function (answer) {
         switch (answer.choice) {
-          case "View All Employees":
-            viewEmployees();
+          case "VIEW_EMPLOYEES":
+            db.viewEmployees();
             break;
 
-          case "View All Employees By Department":
-            viewEmployeesDepartment();
+          // case "View All Employees By Department":
+          //   viewEmployeesDepartment();
+          //   break;
+
+          // case "View All Employees By Manager":
+          //   viewEmployeesManager();
+          //   break;
+
+          // case "Add Employee":
+          //   addEmployee();
+          //   break;
+
+          // case "Remove Employee":
+          //   removeEmployee();
+          //   break;
+
+          // case "Update Employee Role":
+          //   updateEmployeeRole();
+          //   break;
+
+          // case "Update Employee Manager":
+          //   updateEmployeeManager();
+          //   break;
+
+          // case "View All Roles":
+          //   viewAllRoles();
+          //   break;
+
+          // case "Add Role":
+          //   addRole();
+          //   break;
+
+          // case "Remove Role":
+          //   removeRole();
+          //   break;
+
+          case "VIEW_DEPARTMENTS":
+            db.viewAllDepartments();
             break;
 
-          case "View All Employees By Manager":
-            viewEmployeesManager();
-            break;
+          // case "Add Department":
+          //   addDepartment();
+          //   break;
 
-          case "Add Employee":
-            addEmployee();
-            break;
+          // case "Remove Department":
+          //   removeDepartment();
+          //   break;
 
-          case "Remove Employee":
-            removeEmployee();
-            break;
-
-          case "Update Employee Role":
-            updateEmployeeRole();
-            break;
-
-          case "Update Employee Manager":
-            updateEmployeeManager();
-            break;
-
-          case "View All Roles":
-            viewAllRoles();
-            break;
-
-          case "Add Role":
-            addRole();
-            break;
-
-          case "Remove Role":
-            removeRole();
-            break;
-
-          case "View All Departments":
-            viewAllDepartments();
-            break;
-
-          case "Add Department":
-            addDepartment();
-            break;
-
-          case "Remove Department":
-            removeDepartment();
-            break;
-
-          case "Quit":
-            connection.end();
-            break;
+          // case "Quit":
+          //   connection.end();
+          //   break;
         }
       }
 
       // these are all the functions - they are to be called at specific times, not all at once
-      // DB.viewEmployees();
+
       // DB.viewEmployeesDepartment();
       // DB.viewEmployeesManager();
       // DB.addEmployee();
