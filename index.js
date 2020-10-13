@@ -92,9 +92,9 @@ function begin() {
             db.viewEmployees();
             break;
 
-          // case "View All Employees By Department":
-          //   viewEmployeesDepartment();
-          //   break;
+          case "VIEW_EMPLOYEES_BY_DEPARTMENT":
+            db.viewEmployeesDepartment();
+            break;
 
           // case "View All Employees By Manager":
           //   viewEmployeesManager();
@@ -104,9 +104,9 @@ function begin() {
           //   addEmployee();
           //   break;
 
-          // case "Remove Employee":
-          //   removeEmployee();
-          //   break;
+          case "REMOVE_EMPLOYEE":
+            db.removeEmployee();
+            break;
 
           // case "Update Employee Role":
           //   updateEmployeeRole();
