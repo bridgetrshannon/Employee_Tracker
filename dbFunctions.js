@@ -101,10 +101,10 @@ class DB {
           },
         },
         {
-          name: "departmentID",
+          name: "department_id",
           type: "number",
           message:
-            "What is the departmentID of the role you would like to delete?",
+            "What is the department id of the role you would like to add?",
           validate: function (input) {
             if (typeof input == NaN) {
               return "You need to provide a number";
@@ -116,11 +116,11 @@ class DB {
       .then(function (answer) {
         // getting a parse error
         connection.query(
-          "INSERT INTO employee SET ?",
+          "INSERT INTO role SET ?",
           {
             title: answer.title,
             salary: answer.salary,
-            departmentID: answer.departmentID,
+            department_id: answer.department_id,
           },
           function (err, results) {
             if (err) throw err;
@@ -143,7 +143,7 @@ class DB {
     inquirer
       .prompt([
         {
-          name: "departmentName",
+          name: "name",
           type: "input",
           message: "What is the department you would like to add?",
         },
@@ -151,9 +151,9 @@ class DB {
       .then(function (answer) {
         // getting a parse error
         connection.query(
-          "INSERT INTO employee SET ?",
+          "INSERT INTO department SET ?",
           {
-            departmentName: answer.departmentName,
+            name: answer.name,
           },
           function (err, results) {
             if (err) throw err;
