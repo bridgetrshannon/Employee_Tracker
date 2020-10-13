@@ -35,6 +35,10 @@ function begin() {
           name: "Add Employee",
           value: "ADD_EMPLOYEE",
         },
+        // {
+        //   name: "Delete Employee",
+        //   value: "DELETE_EMPLOYEE",
+        // },
         {
           name: "Update Employee Role",
           value: "UPDATE_EMPLOYEE_ROLE",
@@ -61,45 +65,43 @@ function begin() {
         },
       ],
     })
-    .then(
-      function (answer) {
-        switch (answer.choice) {
-          case "VIEW_EMPLOYEES":
-            db.viewEmployees();
-            break;
+    .then(function (answer) {
+      switch (answer.choice) {
+        case "VIEW_EMPLOYEES":
+          db.viewEmployees();
+          break;
 
-          case "ADD_EMPLOYEE":
-            db.addEmployee();
-            break;
+        case "ADD_EMPLOYEE":
+          db.addEmployee();
+          break;
 
-          case "UPDATE_EMPLOYEE_ROLE":
-            db.updateEmployeeRole();
-            break;
+        // case "DELETE_EMPLOYEE":
+        //   db.deleteEmployee();
+        //   break;
 
-          case "VIEW_ROLES":
-            db.viewAllRoles();
-            break;
+        case "UPDATE_EMPLOYEE_ROLE":
+          db.updateEmployeeRole();
+          break;
 
-          case "ADD_ROLE":
-            db.addRole();
-            break;
+        case "VIEW_ROLES":
+          db.viewAllRoles();
+          break;
 
-          case "VIEW_DEPARTMENTS":
-            db.viewAllDepartments();
-            break;
+        case "ADD_ROLE":
+          db.addRole();
+          break;
 
-          case "ADD_DEPARTMENT":
-            db.addDepartment();
-            break;
+        case "VIEW_DEPARTMENTS":
+          db.viewAllDepartments();
+          break;
 
-          case "QUIT":
-            begin();
-            break;
-        }
+        case "ADD_DEPARTMENT":
+          db.addDepartment();
+          break;
+
+        case "QUIT":
+          begin();
+          break;
       }
-
-      // Required functions for
-      // Add departments, roles, employees
-      // Update employee roles
-    );
+    });
 }
