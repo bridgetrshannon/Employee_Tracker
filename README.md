@@ -10,8 +10,20 @@ The user can view, add, and update departments, roles, and employees through a s
 
 ## Demonstrations
 
-![demogif1](./assets/employeetracker1.gif)
-![demogif2](./assets/employeetracker2.gif)
-![departments](./assets/departmenttable.png)
-![employees](./assets/employeetable.png)
-![roles](./assets/rolestable.png)
+- View All Employees, Add Employee, Update Employee Role:
+  <img src="./assets/employeetracker1.gif" alt="demogif1" width="650" height="525"/>
+
+- View All Roles, Add Role, View All Departments, Add Department, Quit:
+  <img src="./assets/employeetracker2.gif" alt="demogif2" width="650" height="550"/>
+
+- View All Employees Table:
+
+  <img src="./assets/employeetable.png" alt="employees" width="400" height="300"/>
+
+- View All Roles Table:
+
+  <img src="./assets/rolestable.png" alt="roles" width="400" height="300"/>
+
+- View All Departments Table:
+
+  <img src="./assets/departmenttable.png" alt="departments" width="400" height="300"/>
